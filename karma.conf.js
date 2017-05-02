@@ -13,10 +13,10 @@ module.exports = function (config) {
             require('@angular/cli/plugins/karma')
         ],
         customLaunchers: {
-            Chrome_with_debugging: {
+            Chrome_debug: {
                 base: 'Chrome',
                 flags: ['--remote-debugging-port=9222']
-            }
+            },
         },
         client: {
             clearContext: false // leave Jasmine Spec Runner output visible in browser
@@ -38,14 +38,13 @@ module.exports = function (config) {
         angularCli: {
             environment: 'dev'
         },
-        reporters: config.angularCli && config.angularCli.codeCoverage ?
-            ['progress', 'coverage-istanbul'] :
-            ['progress', 'kjhtml'],
+        reporters: config.angularCli &&
+            config.angularCli.codeCoverage ? ['progress', 'coverage-istanbul'] : ['progress', 'kjhtml'],
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: true,
-        browsers: ['Chrome_with_debugging'],
+        browsers: ['Chrome'],
         singleRun: false
     });
 };

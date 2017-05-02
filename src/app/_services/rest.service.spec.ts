@@ -45,7 +45,7 @@ describe('RestService', () => {
 
                 service.get('').subscribe(response => {
                     expect(response).toEqual(jasmine.objectContaining({
-                        color: 'blue'
+                        color: 'red'
                     }));
                 });
             }

@@ -6,8 +6,7 @@
     "isShellCommand": true,
     "showOutput": "always",
     "suppressTaskName": true,
-    "tasks": [
-        {
+    "tasks": [{
             "taskName": "install",
             "args": ["install"]
         },
@@ -17,7 +16,14 @@
         },
         {
             "taskName": "test",
-            "args": ["run", "test"]
+            "args": ["test"],
+            "isTestCommand": true,
+            "isBackground": true
+        },
+        {
+            "taskName": "build",
+            "args": ["build"],
+            "isBuildCommand": true
         }
     ]
 }

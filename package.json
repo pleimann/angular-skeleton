@@ -4,9 +4,9 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open --hmr --progress --aot --sourcemaps",
-    "build": "ng build --prod --extract-css --progress --aot --sourcemaps",
-    "test": "ng test --code-coverage",
+    "start": "ng serve --open --hmr --progress --aot",
+    "build": "ng build --prod --extract-css --progress --aot",
+    "test": "ng test --code-coverage --browsers Chrome_debug",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -47,8 +47,10 @@
     "karma-chrome-launcher": "~2.0.0",
     "karma-cli": "~1.0.1",
     "karma-coverage-istanbul-reporter": "^0.2.0",
+    "karma-html-detailed-reporter": "^1.1.20",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.4",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
