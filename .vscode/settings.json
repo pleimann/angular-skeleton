@@ -1,0 +1,5 @@
+{
+    "vsicons.presets.angular": true,
+    "editor.detectIndentation": false,
+    "typescript.tsdk": "./node_modules/typescript/lib"
+}
