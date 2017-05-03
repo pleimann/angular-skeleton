@@ -1,10 +1,10 @@
 import { Moment } from 'moment';
 
-import { QuestionBase } from './';
+import { Bone } from './';
 
 export interface Survey {
     id: number;
     startDate: Moment;
     endDate: Moment;
-    questions: QuestionBase<string|number>[];
+    bones: Bone[];
 }

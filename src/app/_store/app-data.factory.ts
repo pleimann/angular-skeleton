@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/observable/of';
 
-import { Id, Survey, Question, QuestionChoice, QuestionRange, Response, Respondent } from '../_model';
+import { Id, Survey, Bone, BoneLong, BoneShort, BoneFlat, Scan, Patient } from '../_model';
 import { Moment, utc } from 'moment';
 
 export class DataFactory {
@@ -20,12 +20,12 @@ export class DataFactory {
             id: DataFactory.randomId(),
             startDate: DataFactory.randomDate(-10),
             endDate: DataFactory.randomDate(10),
-            questions: DataFactory.randomQuestions()
+            bones: DataFactory.randomQuestions()
         };
     }
 
-    public static randomQuestions(count: number = Math.random()): Array<Question> {
-        const questions: Array<Question> = [];
+    public static randomQuestions(count: number = Math.random()): Array<Bone> {
+        const questions: Array<Bone> = [];
         for (let i = 0; i < count; i++) {
             questions.push(this.randomQuestion());
         }
@@ -33,8 +33,8 @@ export class DataFactory {
         return questions;
     }
 
-    public static randomQuestion(): Question {
-        const randomQuestion: Question = {
+    public static randomQuestion(): Bone {
+        const randomQuestion: Bone = {
             id: DataFactory.randomId(),
             label: DataFactory.randomString(15),
             text: '',
