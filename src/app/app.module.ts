@@ -5,13 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppMaterialModule } from './mat.module';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent, DialogContent } from './app.component';
 import { SurveyComponent } from './survey/survey.component';
 import { RestService } from './_services/rest.service';
 
 @NgModule({
     declarations: [
         AppComponent,
+        DialogContent,
         SurveyComponent
     ],
     imports: [
@@ -19,7 +20,7 @@ import { RestService } from './_services/rest.service';
         FormsModule,
         HttpModule,
         AppRoutingModule,
-        AppMaterialModule
+        AppMaterialModule,
     ],
     providers: [RestService],
     bootstrap: [AppComponent]
