@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'fb-survey',
+  selector: 'sk-survey',
   templateUrl: './survey.component.html',
   styleUrls: ['./survey.component.scss']
 })
