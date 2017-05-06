@@ -1,55 +1,41 @@
 import { Component, Optional } from '@angular/core';
-import { MdDialog, MdSnackBar, MdDialogRef } from '@angular/material';
+import { Router } from '@angular/router';
+import { MdDialog, MdSnackBar, MdDialogRef, MdTabChangeEvent } from '@angular/material';
+import { Observable } from 'rxjs/Observable';
+interface Page {
+    name: string;
+    link: string;
+    disabled?: boolean;
+}
 
 @Component({
-    selector: 'sk-root',
+    selector: 'mp-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    isDarkTheme = false;
-    lastDialogResult: string;
-
-    foods: any[] = [
-        { name: 'Pizza', rating: 'Excellent' },
-        { name: 'Burritos', rating: 'Great' },
-        { name: 'French fries', rating: 'Pretty good' },
+    toolbarColor = 'primary';
+    pages: Page[] = [
+        {
+            name: 'HOME',
+            link: '/home'
+        }, {
+            name: 'DATA',
+            link: '/data'
+        }, {
+            name: 'WEATHER',
+            link: '/weather'
+        }, {
+            name: 'ABOUT',
+            link: '/about'
+        }
     ];
 
-    progress = 0;
+    constructor(private router: Router) { }
 
-    constructor(private _dialog: MdDialog, private _snackbar: MdSnackBar) {
-        // Update the value for the progress-bar on an interval.
-        setInterval(() => {
-            this.progress = (this.progress + Math.floor(Math.random() * 4) + 1) % 100;
-        }, 200);
+    // TOOD fix this to unsubscribe or refactor
+    selectTab(event: MdTabChangeEvent) {
+        // this.pages.map((pages: Page[]) => pages.filter((p, index) => index === event.index)[0])
+        //     .subscribe((page: Page) => this.router.navigateByUrl(page.link));
     }
-
-    openDialog() {
-        const dialogRef = this._dialog.open(DialogContent);
-
-        dialogRef.afterClosed().subscribe(result => {
-            this.lastDialogResult = result;
-        });
-    }
-
-    showSnackbar() {
-        this._snackbar.open('YUM SNACKS', 'CHEW');
-    }
-}
-
-@Component({
-    template: `
-    <p>This is a dialog</p>
-    <p>
-      <label>
-        This is a text box inside of a dialog.
-        <input #dialogInput>
-      </label>
-    </p>
-    <p> <button md-button (click)="dialogRef.close(dialogInput.value)">CLOSE</button> </p>
-  `,
-})
-export class DialogContent {
-    constructor( @Optional() public dialogRef: MdDialogRef<DialogContent>) { }
 }

@@ -14,7 +14,7 @@ import {
     MdTabsModule,
     MdDialogModule,
     MdProgressBarModule,
-    MdSnackBarModule,
+    MdSnackBarModule
 } from '@angular/material';
 
 @NgModule({

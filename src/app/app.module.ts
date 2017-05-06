@@ -5,15 +5,21 @@ import { HttpModule } from '@angular/http';
 
 import { AppMaterialModule } from './mat.module';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent, DialogContent } from './app.component';
-import { SurveyComponent } from './survey/survey.component';
 import { RestService } from './_services/rest.service';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home';
+import { DataComponent } from './data';
+import { AboutComponent } from './about';
+import { WeatherComponent } from './weather';
+import { FeedListComponent, FeedDetailComponent } from './feeds';
 
 @NgModule({
     declarations: [
         AppComponent,
-        DialogContent,
-        SurveyComponent
+        HomeComponent,
+        DataComponent,
+        AboutComponent,
+        WeatherComponent
     ],
     imports: [
         BrowserModule,
@@ -22,7 +28,7 @@ import { RestService } from './_services/rest.service';
         AppRoutingModule,
         AppMaterialModule,
     ],
-    providers: [RestService],
-    bootstrap: [AppComponent]
+    providers: [ RestService ],
+    bootstrap: [ AppComponent ]
 })
 export class AppModule { }

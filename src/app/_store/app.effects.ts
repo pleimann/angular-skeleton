@@ -5,25 +5,25 @@ import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/switchMap';
 
-import { AppActions, LoadSurveysSuccessAction, LoadSurveysFailAction } from './';
+import { AppActions, LoadMoistureDataSuccessAction, LoadMoistureDataFailAction } from './';
 import { DataFactory } from './app-data.factory';
-import { Survey } from 'app/_model';
+import { MoistureState } from '../_model';
+import { RestService } from '../_services';
 
 @Injectable()
 export class AppEffects {
-    @Effect() surveys$ = this.actions$
-        // Listen for the 'LOAD_SURVEYS' action
-        .ofType(AppActions.LOAD_SURVEYS)
+    @Effect() state$ = this.actions$
+        // Listen for the 'LOAD_MOISTURE_DATA' action
+        .ofType(AppActions.LOAD_MOISTURE_DATA)
         .map(toPayload)
-        .map((data: Survey[]) => LoadSurveysSuccessAction([DataFactory.randomSurvey()]))
-        // .switchMap((request: any, i: number) =>
-        //     this.restService.getAllLocations()
-        //         // If successful, dispatch success action with result
-        //         .map((data: Survey[]) => LoadSurveysSuccessAction(data))
-        //         // If request fails, dispatch failed action
-        //         .catch((e: Error) => Observable.of(LoadSurveysFailAction(e)))
-        // )
-        ;
+        .map((data: MoistureState) => LoadMoistureDataSuccessAction(DataFactory.randomMoistureState()))
+        .switchMap((request: any, i: number) =>
+            this.restService.get()
+                // If successful, dispatch success action with result
+                .map((data: MoistureState) => LoadMoistureDataSuccessAction(data))
+                // If request fails, dispatch failed action
+                .catch((e: Error) => Observable.of(LoadMoistureDataFailAction(e)))
+        );
 
-    constructor(private actions$: Actions) { }
+    constructor(private actions$: Actions, private restService: RestService) { }
 }

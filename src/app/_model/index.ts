@@ -1,10 +1,4 @@
-export * from './bone';
-export * from './bone-flat';
-export * from './bone-long';
-export * from './bone-short';
-export * from './patient';
-export * from './scan';
-export * from './skeleton';
+export * from './model';
 
 export type Id = number;
 

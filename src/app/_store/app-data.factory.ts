@@ -2,50 +2,63 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/observable/of';
 
-import { Id, Survey, Bone, BoneLong, BoneShort, BoneFlat, Scan, Patient } from '../_model';
+import { Id, MoistureState, MoistureFeed, MoistureReading } from '../_model';
 import { Moment, utc } from 'moment';
 
 export class DataFactory {
-    public static randomSurveys(count: number = 5): Survey[] {
-        const surveys: Array<Survey> = [];
-        for (let i = 0; i < count; i++) {
-            surveys.push(this.randomSurvey());
-        }
+    public static randomMoistureState(count: number = 5): MoistureState {
+        const feeds: MoistureFeed[] = DataFactory.randomFeeds(5);
 
-        return surveys;
+        return feeds.reduce((state: MoistureState, feed: MoistureFeed) => {
+            state[feed.name] = feed;
+            return state;
+
+        }, {} as MoistureState);
     }
 
-    public static randomSurvey(): Survey {
+    public static randomFeeds(count: number = 5): MoistureFeed[] {
+        const feeds: MoistureFeed[] = [];
+        for (let i = 0; i < count; i++) {
+            feeds.push(DataFactory.randomFeed());
+        }
+
+        return feeds;
+    }
+
+    public static randomFeed(): MoistureFeed {
+        const readings = DataFactory.randomReadings();
+
         return {
             id: DataFactory.randomId(),
-            startDate: DataFactory.randomDate(-10),
-            endDate: DataFactory.randomDate(10),
-            bones: DataFactory.randomQuestions()
+            name: DataFactory.randomString(20),
+            readings: readings
         };
     }
 
-    public static randomQuestions(count: number = Math.random()): Array<Bone> {
-        const questions: Array<Bone> = [];
+    public static randomReadings(count: number = DataFactory.randomInteger()): MoistureReading[] {
+        const readings: MoistureReading[] = [];
         for (let i = 0; i < count; i++) {
-            questions.push(this.randomQuestion());
+            readings.push(this.randomReading());
         }
 
-        return questions;
+        return readings;
     }
 
-    public static randomQuestion(): Bone {
-        const randomQuestion: Bone = {
-            id: DataFactory.randomId(),
-            label: DataFactory.randomString(15),
-            text: '',
-            value: null
+    public static randomReading(): MoistureReading {
+        const randomReading: MoistureReading = {
+            value: Math.random(),
+            timestamp: utc()
         };
 
-        return randomQuestion;
+        return randomReading;
     }
 
     public static randomId(): Id {
         return Math.round(Math.random() * 1000);
+    }
+
+    public static randomInteger(): number {
+        return Math.round((Math.random() * 100));
     }
 
     public static randomDate(bound: number = 10): Moment {

@@ -1,14 +1,14 @@
 import { ActionReducer, Action } from '@ngrx/store';
 
 import { AppActions } from './app.actions';
-import { Survey } from 'app/_model';
+import { MoistureState } from '../_model';
 
 interface AppState {
-    surveys: Survey[];
+    moisture: MoistureState;
 }
 
 const initialState: ReadonlyAppState = {
-    surveys: []
+    moisture: null
 };
 
 type ReadonlyAppState = Readonly<AppState>;
@@ -17,19 +17,22 @@ export function appReducer(state: AppState = initialState, action: Action): Read
     let newState: AppState = state;
 
     switch (action.type) {
-        case AppActions.LOAD_SURVEYS_SUCCESS:
+        case AppActions.LOAD_MOISTURE_DATA_SUCCESS:
             newState = {
-                surveys: action.payload
+                moisture: action.payload
             };
 
             break;
 
-        case AppActions.LOAD_SURVEYS_FAILED:
+        case AppActions.LOAD_MOISTURE_DATA_FAILED:
             newState = {
-                surveys: []
+                moisture: null
             };
 
             break;
+
+        default:
+            return state;
     }
 
     return Object.freeze(newState);

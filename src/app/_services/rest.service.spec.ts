@@ -9,7 +9,7 @@ import {
 import 'rxjs/add/operator/single';
 
 import { RestService } from './rest.service';
-import { Survey } from 'app/_model';
+import { Skeleton } from 'app/_model';
 
 describe('RestService', () => {
     beforeEach(() => {

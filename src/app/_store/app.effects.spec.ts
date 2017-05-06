@@ -25,6 +25,38 @@ describe('App Effects', () => {
         appEffects = _authEffects;
     }));
 
+    describe('Garden Action Effects', function () {
+    beforeEachProviders(() => [
+        BaseRequestOptions,
+        MockBackend,
+        EffectsTestingModule
+        provide(Http, {
+            useFactory: (backend: MockBackend, defaultOptions: BaseRequestOptions) => {
+                return new Http(backend, defaultOptions);
+            },
+            deps: [ MockBackend, BaseRequestOptions ]
+        })
+    ]);
+
+    beforeEach(inject([ MockBackend ], (backend: MockBackend) => {
+        const baseResponse = new Response(new ResponseOptions({
+            body: '{}',
+            status: 200,
+            statusText: 'OK'
+        }));
+        backend.connections.subscribe((connection: MockConnection) =>
+            connection.mockRespond(baseResponse)
+        );
+    }));
+
+    it('should respond with latest data',
+        inject([ MockStateUpdates, MpMoistureEffects ], (updates: MockStateUpdates, moisture: MpMoistureEffects) => {
+        moisture.data$.subscribe((action: Action) => {
+                expect(action.type).toBe('GET_MOISTURE_DATA_SUCCESS');
+            });
+        })
+    );
+
     it('should return a LOAD_GEOGRAPHIC_LOCATIONS_SUCCESS action after loading the locations', () => {
         runner.queue({ type: AppActions.LOAD_SURVEYS });
 
