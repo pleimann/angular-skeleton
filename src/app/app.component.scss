@@ -1,26 +1,43 @@
-.toolbar-fill-remaining-space {
-    flex: 1 1 auto;
-}
+@import '~@angular/material/_theming';
 
-.toolbar-spacer {
-    flex: 1 1 auto;
+@import '../palettes';
+
+.background-image {
+    z-index: 1000;
+    position: absolute;
+    height: 124px;
+    width: 220px;
+    background-image: url('../assets/image/garden@1x.png');
+    background-repeat: no-repeat;
+    background-size: 220px 124px;
 }
 
 .mat-toolbar {
-    background-image: url('../assets/image/garden@1x.png') !important;
-    background-repeat: no-repeat !important;
-    background-size: 220px 124px !important;
-    background-position-y: 15px;
-    align-content: flex-end;
-
-    .mat-toolbar-row {
-        height: 50px;
-    }
+    padding-left: 225px;
+    height: 100px;
 
     h1 {
-        flex-grow: 1;
+        max-width: 640px;
         text-align: center;
-        font-size: 3rem;
-        text-shadow: 0px 10px 18px transparentize(#212121, 0.7);
+        color: mat-color($garden-primary, 50);
+        font-size: 4rem;
+        flex-grow: 1;
+        text-shadow: 0px 8px 12px transparentize(mat-color($garden-primary, 900), 0.1);
+    }
+}
+
+.mat-tab-nav-bar {
+    padding-left: 225px;
+    color: mat-color($garden-primary, 300);
+    background-color: mat-color($garden-accent, 800);
+    box-shadow: 0px 2px 4px transparentize(mat-color($garden-accent, 900), 0.1);
+
+    a {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .mat-ink-bar {
+        height: 3px;
     }
 }

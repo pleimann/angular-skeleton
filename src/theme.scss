@@ -2,9 +2,7 @@
 
 @include mat-core();
 
-$garden-primary: mat-palette($mat-light-green);
-$garden-accent:  mat-palette($mat-blue-grey, A200, A100, A400);
-$garden-warn:    mat-palette($mat-deep-orange);
+@import './palettes';
 
 $garden-theme-light: mat-light-theme($garden-primary, $garden-accent, $garden-warn);
 $garden-theme-dark: mat-dark-theme($garden-primary, $garden-accent, $garden-warn);

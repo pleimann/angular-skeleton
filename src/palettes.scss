@@ -1,0 +1,5 @@
+@import '~@angular/material/_theming';
+
+$garden-primary: mat-palette($mat-light-green);
+$garden-accent:  mat-palette($mat-grey, A200, A100, A400);
+$garden-warn:    mat-palette($mat-deep-orange);
