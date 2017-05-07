@@ -6,7 +6,7 @@
 
 <nav md-tab-nav-bar>
     <a md-tab-link *ngFor="let page of pages" [routerLink]="page.link" routerLinkActive #rla="routerLinkActive"
-     [active]="rla.active">{{page.name}}</a>
+     [active]="rla.isActive">{{page.name}}</a>
 </nav>
 
 <router-outlet></router-outlet>

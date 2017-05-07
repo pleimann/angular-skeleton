@@ -5,8 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import { Feed, FeedsService } from '../_services';
 
 @Component({
-  selector: 'mp-garden-feeds',
-  template: `
+    selector: 'mp-garden-feeds',
+    template: `
 <md-list *ngFor="let feed of feeds | async">
    <md-list-item>
     <h3 md-line><a [routerLink]="['/feeds', feed.name]"><md-icon>receipt</md-icon>{{ feed.name }}</a></h3>
@@ -14,15 +14,15 @@ import { Feed, FeedsService } from '../_services';
    </md-list-item>
 </md-list>
 `,
-  providers: [ FeedsService ],
+    providers: [FeedsService],
 })
 export class FeedListComponent implements OnInit {
-  public feeds: Observable<Feed[]>;
+    public feeds: Observable<Feed[]>;
 
-  constructor(private feedService: FeedsService) {
-  }
+    constructor(private feedService: FeedsService) {
+    }
 
-  ngOnInit() {
-    this.feeds = this.feedService.all()
-  }
+    ngOnInit() {
+        this.feeds = this.feedService.all();
+    }
 }
