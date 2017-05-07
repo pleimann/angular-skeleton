@@ -19,7 +19,9 @@ import { FeedListComponent, FeedDetailComponent } from './feeds';
         HomeComponent,
         DataComponent,
         AboutComponent,
-        WeatherComponent
+        WeatherComponent,
+        FeedDetailComponent,
+        FeedListComponent
     ],
     imports: [
         BrowserModule,
