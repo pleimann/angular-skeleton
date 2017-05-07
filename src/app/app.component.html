@@ -1,12 +1,12 @@
 <div class="background-image"></div>
 
 <md-toolbar color="primary">
-    <h1 md-colors="{color:'accent'}">Garden Dashboard</h1>
+    <h1>Garden Dashboard</h1>
 </md-toolbar>
 
 <nav md-tab-nav-bar>
-    <a md-tab-link *ngFor="let page of pages" [routerLink]="page.link" routerLinkActive #rla="routerLinkActive"
-     [active]="rla.isActive">{{page.name}}</a>
+    <a md-tab-link *ngFor="let page of pages" [routerLink]="page.link" 
+     routerLinkActive="active-link" #rla="routerLinkActive" [active]="rla.isActive">{{page.name}}</a>
 </nav>
 
 <router-outlet></router-outlet>
