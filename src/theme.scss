@@ -1,4 +1,7 @@
 @import '~@angular/material/_theming';
+@import '~@covalent/core/theming/all-theme';
+@import '~@covalent/markdown/markdown-theme';
+@import '~@covalent/highlight/highlight-theme';
 
 @include mat-core();
 
@@ -8,3 +11,7 @@ $garden-theme-light: mat-light-theme($garden-primary, $garden-accent, $garden-wa
 $garden-theme-dark: mat-dark-theme($garden-primary, $garden-accent, $garden-warn);
 
 @include angular-material-theme($garden-theme-dark);
+
+@include covalent-theme($garden-theme-dark);
+@include covalent-markdown-theme($garden-theme-dark);
+@include covalent-highlight-theme();

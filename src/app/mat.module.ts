@@ -17,6 +17,12 @@ import {
     MdSnackBarModule
 } from '@angular/material';
 
+import { CovalentCoreModule } from '@covalent/core';
+import { CovalentHttpModule } from '@covalent/http';
+import { CovalentHighlightModule } from '@covalent/highlight';
+import { CovalentMarkdownModule } from '@covalent/markdown';
+import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
+
 @NgModule({
     imports: [
         BrowserAnimationsModule,
@@ -34,6 +40,11 @@ import {
         MdDialogModule,
         MdProgressBarModule,
         MdSnackBarModule,
+        CovalentCoreModule,
+        CovalentHttpModule.forRoot(),
+        CovalentHighlightModule,
+        CovalentMarkdownModule,
+        CovalentDynamicFormsModule,
     ],
     exports: [
         BrowserAnimationsModule,
@@ -51,6 +62,11 @@ import {
         MdDialogModule,
         MdProgressBarModule,
         MdSnackBarModule,
+        CovalentCoreModule,
+        CovalentHttpModule,
+        CovalentHighlightModule,
+        CovalentMarkdownModule,
+        CovalentDynamicFormsModule,
     ],
 })
 export class AppMaterialModule { }
