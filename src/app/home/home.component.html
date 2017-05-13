@@ -2,7 +2,11 @@
     <div layout="column">
         <div flex-gt-xs="100">
             <md-card>
-                <md-card-title>Moisture Level</md-card-title>
+                <md-card-title-group>
+                    <md-card-title>Moisture</md-card-title>
+                    <md-card-subtitle>Soil moisture level of each bed over time</md-card-subtitle>
+                    <img md-card-sm-image src="../../assets/image/md-general/system-preferences.png" />
+                </md-card-title-group>
                 <md-divider></md-divider>
                 <div class="chart-height push-top-sm pull-bottom">
                     <mp-moisture-chart></mp-moisture-chart>
@@ -10,18 +14,25 @@
             </md-card>
         </div>
         <div layout="row" layout-xs="column">
-            <div flex-gt-xs="50">
+            <div flex-gt-xs="25">
                 <md-card>
-                    <md-card-title>Battery Level</md-card-title>
+                    <md-card-title>Battery</md-card-title>
                     <md-divider></md-divider>
                     <mp-battery></mp-battery>
                 </md-card>
             </div>
+            <div flex-gt-xs="25">
+                <md-card>
+                    <md-card-title>Signal</md-card-title>
+                    <md-divider></md-divider>
+                    <mp-signal></mp-signal>
+                </md-card>
+            </div>
             <div flex-gt-xs="50">
                 <md-card>
-                    <md-card-title>Battery Level</md-card-title>
+                    <md-card-title>Weather</md-card-title>
                     <md-divider></md-divider>
-                    <mp-battery></mp-battery>
+                    <mp-weather></mp-weather>
                 </md-card>
             </div>
         </div>
