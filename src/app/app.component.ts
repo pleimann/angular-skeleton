@@ -21,27 +21,10 @@ interface Page {
 })
 export class AppComponent implements AfterViewChecked {
     pages: Page[] = [
-        {
-            name: 'HOME',
-            link: '/home',
-            description: 'Dashboard',
-            icon: 'home'
-        }, {
-            name: 'DATA',
-            link: '/data',
-            description: 'Table',
-            icon: 'list'
-        }, {
-            name: 'WEATHER',
-            link: '/weather',
-            description: 'Forecast',
-            icon: 'cloud'
-        }, {
-            name: 'ABOUT',
-            link: '/about',
-            description: 'PleimaGarden',
-            icon: 'question_answer'
-        }
+        { name: 'HOME', link: '/home', description: 'Dashboard', icon: 'home' },
+        { name: 'DATA', link: '/data', description: 'Table', icon: 'list' },
+        { name: 'WEATHER', link: '/weather', description: 'Forecast', icon: 'cloud' },
+        { name: 'ABOUT', link: '/about', description: 'PleimaGarden', icon: 'question_answer' }
     ];
 
     constructor(public media: TdMediaService, public router: Router,
@@ -49,7 +32,6 @@ export class AppComponent implements AfterViewChecked {
         this._iconRegistry.addSvgIconInNamespace('assets', 'garden',
             this._domSanitizer.bypassSecurityTrustResourceUrl('assets/image/garden@1x.png')
         );
-
     }
 
     ngAfterViewChecked(): void {

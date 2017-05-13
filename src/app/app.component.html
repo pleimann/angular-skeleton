@@ -1,8 +1,7 @@
 <td-layout-nav-list #navList navigationRoute="/" [opened]="media.registerQuery('gt-sm') | async"
     [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'" 
     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '225px' : '100%'">
-    <div td-sidenav-toolbar-content class="background-image">
-        Garden
+    <div td-sidenav-toolbar-content class="background-image pull-md">
     </div>
     <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
         <a md-list-item *ngFor="let page of pages" [routerLink]="page.link">
@@ -12,11 +11,8 @@
         </a>
     </md-nav-list>
     <div td-toolbar-content layout="row" flex>
-        <span flex></span>
+        <span flex><h1>Garden Dashboard</h1></span>
         <span>{{ router.url }}</span>
     </div>
     <router-outlet></router-outlet>
-    <td-layout-footer>
-
-    </td-layout-footer>
 </td-layout-nav-list>

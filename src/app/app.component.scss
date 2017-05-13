@@ -1,11 +1,13 @@
 .background-image {
-    z-index: 1000;
-    // position: absolute;
-    // top: 0; 
-    // left: 0;
-    // height: 124px;
-    // width: 220px;
-    background-image: url('../assets/image/garden@1x.png');
+    height: 120px;
+    width: 220px;
+    background-image: url('../assets/image/vegetable_garden.png');
     background-repeat: no-repeat;
-    background-size: 220px 124px;
+    background-size: 220px 120px;
+    // margin: 0 -16px;
+}
+
+h1 {
+    margin: 0;
+    // text-shadow: 
 }
