@@ -5,9 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { LineChartModule, GaugeModule } from '@swimlane/ngx-charts';
 
-import { AppMaterialModule } from './mat.module';
+import { AppStoreModule } from './_store';
+import { RestService, FeedsService } from './_services';
+
+import { AppMaterialModule } from './app-material.module';
 import { AppRoutingModule } from './app-routing.module';
-import { RestService } from './_services/rest.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { DataComponent } from './data';
@@ -15,7 +17,8 @@ import { AboutComponent } from './about';
 import { WeatherComponent } from './weather';
 import { MoistureChartComponent } from './moisture-chart';
 import { FeedListComponent, FeedDetailComponent } from './feeds';
-import { BatteryComponent } from './battery/battery.component';
+import { BatteryComponent } from './battery';
+import { SignalComponent } from './signal';
 
 @NgModule({
     declarations: [
@@ -28,6 +31,7 @@ import { BatteryComponent } from './battery/battery.component';
         FeedDetailComponent,
         FeedListComponent,
         BatteryComponent,
+        SignalComponent,
     ],
     imports: [
         BrowserModule,
@@ -35,6 +39,7 @@ import { BatteryComponent } from './battery/battery.component';
         HttpModule,
         AppRoutingModule,
         AppMaterialModule,
+        AppStoreModule,
         LineChartModule,
         GaugeModule,
     ],
