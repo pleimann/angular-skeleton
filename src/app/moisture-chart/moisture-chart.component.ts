@@ -1,12 +1,9 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Observable } from 'rxjs/Observable';
 import {
     TdDataTableSortingOrder, TdDataTableService, ITdDataTableSortChangeEvent,
-    TdDigitsPipe
+    TdDigitsPipe, IPageChangeEvent
 } from '@covalent/core';
-import { Observable } from 'rxjs/Observable';
-
-import { IPageChangeEvent } from '@covalent/core';
 
 import { moistureData } from './data';
 
@@ -15,7 +12,7 @@ import { moistureData } from './data';
     templateUrl: './moisture-chart.component.html',
     styleUrls: ['./moisture-chart.component.scss'],
 })
-export class MoistureChartComponent implements AfterViewInit {
+export class MoistureChartComponent {
     data: any[];
 
     // Generic Chart options
@@ -35,12 +32,8 @@ export class MoistureChartComponent implements AfterViewInit {
         ],
     };
 
-    constructor(private _titleService: Title, private _dataTableService: TdDataTableService) {
+    constructor() {
         this.data = moistureData;
-    }
-
-    ngAfterViewInit(): void {
-        this._titleService.setTitle('Moisture Data');
     }
 
     // ngx transform using covalent digits pipe
