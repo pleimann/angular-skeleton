@@ -17,13 +17,14 @@ export class AppEffects {
         .ofType(AppActions.LOAD_MOISTURE_DATA)
         .map(toPayload)
         .map((data: MoistureState) => LoadMoistureDataSuccessAction(DataFactory.randomMoistureState()))
-        .switchMap((request: any, i: number) =>
-            this.restService.get()
-                // If successful, dispatch success action with result
-                .map((data: MoistureState) => LoadMoistureDataSuccessAction(data))
-                // If request fails, dispatch failed action
-                .catch((e: Error) => Observable.of(LoadMoistureDataFailAction(e)))
-        );
+        // .switchMap((request: any, i: number) =>
+        //     this.restService.get()
+        //         // If successful, dispatch success action with result
+        //         .map((data: MoistureState) => LoadMoistureDataSuccessAction(data))
+        //         // If request fails, dispatch failed action
+        //         .catch((e: Error) => Observable.of(LoadMoistureDataFailAction(e)))
+        // )
+        ;
 
     constructor(private actions$: Actions, private restService: RestService) { }
 }

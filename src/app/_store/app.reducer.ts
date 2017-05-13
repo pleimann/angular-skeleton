@@ -1,14 +1,18 @@
 import { ActionReducer, Action } from '@ngrx/store';
 
 import { AppActions } from './app.actions';
-import { MoistureState } from '../_model';
+import { MoistureState, SignalState, BatteryState } from '../_model';
 
-interface AppState {
+export interface AppState {
     moisture: MoistureState;
+    signal: SignalState;
+    battery: BatteryState;
 }
 
 const initialState: ReadonlyAppState = {
-    moisture: null
+    moisture: null,
+    signal: null,
+    battery: null
 };
 
 type ReadonlyAppState = Readonly<AppState>;
@@ -19,6 +23,7 @@ export function appReducer(state: AppState = initialState, action: Action): Read
     switch (action.type) {
         case AppActions.LOAD_MOISTURE_DATA_SUCCESS:
             newState = {
+                ...state,
                 moisture: action.payload
             };
 
@@ -26,6 +31,7 @@ export function appReducer(state: AppState = initialState, action: Action): Read
 
         case AppActions.LOAD_MOISTURE_DATA_FAILED:
             newState = {
+                ...state,
                 moisture: null
             };
 
