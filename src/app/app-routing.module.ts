@@ -7,15 +7,15 @@ import { AboutComponent } from './about';
 import { WeatherComponent } from './weather';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'data', component: DataComponent },
-  { path: 'weather', component: WeatherComponent },
-  { path: 'about', component: AboutComponent }
+    { path: '', component: HomeComponent },
+    { path: 'home', component: HomeComponent },
+    { path: 'data', component: DataComponent },
+    { path: 'weather', component: WeatherComponent },
+    { path: 'about', component: AboutComponent }
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

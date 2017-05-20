@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { LineChartModule, GaugeModule } from '@swimlane/ngx-charts';
-
 import { AppStoreModule } from './_store';
 import { RestService, FeedsService } from './_services';
 
@@ -40,8 +38,6 @@ import { SignalComponent } from './signal';
         AppRoutingModule,
         AppMaterialModule,
         AppStoreModule,
-        LineChartModule,
-        GaugeModule,
     ],
     providers: [ RestService ],
     bootstrap: [ AppComponent ]

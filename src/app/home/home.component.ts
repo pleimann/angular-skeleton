@@ -5,8 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { MoistureChartComponent } from '../moisture-chart';
 import { BatteryComponent } from '../battery';
 import { SignalComponent } from '../signal';
-import { MoistureState, BatteryState, SignalState } from '../_model';
-import { AppState } from 'app/_store';
+import { MoistureState, BatteryState, SignalState, AppState } from '../_model';
 
 @Component({
     selector: 'mp-home',

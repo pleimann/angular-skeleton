@@ -22,32 +22,18 @@ import { CovalentHttpModule } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
+import { LineChartModule, GaugeModule } from '@swimlane/ngx-charts';
+
+import 'hammerjs';
 
 @NgModule({
     imports: [
         BrowserAnimationsModule,
-        MdButtonModule,
-        MdCheckboxModule,
-        MdSidenavModule,
-        MdCardModule,
-        MdIconModule,
-        MdInputModule,
-        MdListModule,
-        MdMenuModule,
-        MdToolbarModule,
-        MdGridListModule,
-        MdTabsModule,
-        MdDialogModule,
-        MdProgressBarModule,
-        MdSnackBarModule,
         CovalentCoreModule,
         CovalentHttpModule.forRoot(),
         CovalentHighlightModule,
         CovalentMarkdownModule,
         CovalentDynamicFormsModule,
-    ],
-    exports: [
-        BrowserAnimationsModule,
         MdButtonModule,
         MdCheckboxModule,
         MdSidenavModule,
@@ -62,11 +48,32 @@ import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
         MdDialogModule,
         MdProgressBarModule,
         MdSnackBarModule,
+        LineChartModule,
+        GaugeModule,
+    ],
+    exports: [
+        BrowserAnimationsModule,
         CovalentCoreModule,
         CovalentHttpModule,
         CovalentHighlightModule,
         CovalentMarkdownModule,
         CovalentDynamicFormsModule,
+        MdButtonModule,
+        MdCheckboxModule,
+        MdSidenavModule,
+        MdCardModule,
+        MdIconModule,
+        MdInputModule,
+        MdListModule,
+        MdMenuModule,
+        MdToolbarModule,
+        MdGridListModule,
+        MdTabsModule,
+        MdDialogModule,
+        MdProgressBarModule,
+        MdSnackBarModule,
+        LineChartModule,
+        GaugeModule,
     ],
 })
 export class AppMaterialModule { }

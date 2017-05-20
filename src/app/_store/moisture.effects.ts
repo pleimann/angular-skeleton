@@ -5,16 +5,16 @@ import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/switchMap';
 
-import { AppActions, LoadMoistureDataSuccessAction, LoadMoistureDataFailAction } from './';
 import { DataFactory } from './app-data.factory';
 import { MoistureState } from '../_model';
 import { RestService } from '../_services';
+import { MoistureActions, LoadMoistureDataSuccessAction, LoadMoistureDataFailAction } from '../_store';
 
 @Injectable()
-export class AppEffects {
+export class MoistureEffects {
     @Effect() state$ = this.actions$
         // Listen for the 'LOAD_MOISTURE_DATA' action
-        .ofType(AppActions.LOAD_MOISTURE_DATA)
+        .ofType(MoistureActions.LOAD_MOISTURE_DATA)
         .map(toPayload)
         .map((data: MoistureState) => LoadMoistureDataSuccessAction(DataFactory.randomMoistureState()))
         // .switchMap((request: any, i: number) =>

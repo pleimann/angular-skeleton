@@ -6,5 +6,5 @@ export interface BatteryLevel {
 }
 
 export interface BatteryState {
-    BatteryLevel: BatteryLevel[];
+    level: BatteryLevel[];
 }

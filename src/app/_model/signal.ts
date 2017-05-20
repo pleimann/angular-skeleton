@@ -6,5 +6,5 @@ export interface SignalReading {
 }
 
 export interface SignalState {
-    signal: SignalReading[];
+    readings: SignalReading[];
 }

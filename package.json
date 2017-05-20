@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open --hmr --progress",
+    "start": "ng serve --open --progress",
     "build": "ng build --prod --extract-css --progress --aot",
     "test": "ng test --code-coverage --browsers Chrome_debug",
     "lint": "ng lint",
@@ -19,7 +19,7 @@
     "@angular/core": "^4.1.0",
     "@angular/forms": "^4.1.0",
     "@angular/http": "^4.1.0",
-    "@angular/material": "^2.0.0-beta.3",
+    "@angular/material": "^2.0.0-beta.5",
     "@angular/platform-browser": "^4.1.0",
     "@angular/platform-browser-dynamic": "^4.1.0",
     "@angular/router": "^4.1.0",
