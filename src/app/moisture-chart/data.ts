@@ -1,6 +1,6 @@
 export let moistureData: any = [
   {
-    'name': 'Container Apps',
+    'name': 'Bed 1',
     'series': [
       {
         'value': 2469,
@@ -25,7 +25,7 @@ export let moistureData: any = [
     ],
   },
   {
-    'name': 'Alerting Dashboard',
+    'name': 'Bed 2',
     'series': [
       {
         'value': 2452,
@@ -48,80 +48,5 @@ export let moistureData: any = [
         'name': '2016-09-12T18:48:58.925Z',
       },
     ],
-  },
-  {
-    'name': 'Streaming Data',
-    'series': [
-      {
-        'value': 4022,
-        'name': '2016-09-15T19:25:07.773Z',
-      },
-      {
-        'value': 2345,
-        'name': '2016-09-17T17:16:53.279Z',
-      },
-      {
-        'value': 5148,
-        'name': '2016-09-15T10:34:32.344Z',
-      },
-      {
-        'value': 6868,
-        'name': '2016-09-19T14:33:45.710Z',
-      },
-      {
-        'value': 5415,
-        'name': '2016-09-12T18:48:58.925Z',
-      },
-    ],
-  },
-  {
-    'name': 'Database Queries',
-    'series': [
-      {
-        'value': 6194,
-        'name': '2016-09-15T19:25:07.773Z',
-      },
-      {
-        'value': 6585,
-        'name': '2016-09-17T17:16:53.279Z',
-      },
-      {
-        'value': 6857,
-        'name': '2016-09-15T10:34:32.344Z',
-      },
-      {
-        'value': 2545,
-        'name': '2016-09-19T14:33:45.710Z',
-      },
-      {
-        'value': 5986,
-        'name': '2016-09-12T18:48:58.925Z',
-      },
-    ],
-  },
-  {
-    'name': 'NoSQL Database',
-    'series': [
-      {
-        'value': 4260,
-        'name': '2016-09-15T19:25:07.773Z',
-      },
-      {
-        'value': 4810,
-        'name': '2016-09-17T17:16:53.279Z',
-      },
-      {
-        'value': 5087,
-        'name': '2016-09-15T10:34:32.344Z',
-      },
-      {
-        'value': 5941,
-        'name': '2016-09-19T14:33:45.710Z',
-      },
-      {
-        'value': 6427,
-        'name': '2016-09-12T18:48:58.925Z',
-      },
-    ],
-  },
+  }
 ];

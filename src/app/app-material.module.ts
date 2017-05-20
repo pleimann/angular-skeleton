@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {
     MdButtonModule,
     MdCheckboxModule,
@@ -29,6 +30,7 @@ import 'hammerjs';
 @NgModule({
     imports: [
         BrowserAnimationsModule,
+        FlexLayoutModule,
         CovalentCoreModule,
         CovalentHttpModule.forRoot(),
         CovalentHighlightModule,
@@ -53,6 +55,7 @@ import 'hammerjs';
     ],
     exports: [
         BrowserAnimationsModule,
+        FlexLayoutModule,
         CovalentCoreModule,
         CovalentHttpModule,
         CovalentHighlightModule,

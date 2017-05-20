@@ -1,11 +1,10 @@
-<div class="md-content" class="inset">
-    <div layout="column">
-        <div flex-gt-xs="100">
+<div>
+    <div fxLayout="column">
+        <div fxFlex="100%">
             <md-card>
                 <md-card-title-group>
                     <md-card-title>Moisture</md-card-title>
                     <md-card-subtitle>Soil moisture level of each bed over time</md-card-subtitle>
-                    <md-icon md-card-md-image>view_list</md-icon>
                 </md-card-title-group>
                 <md-divider></md-divider>
                 <div class="chart-height push-top-sm pull-bottom">
@@ -13,22 +12,22 @@
                 </div>
             </md-card>
         </div>
-        <div layout="row" layout-xs="column">
-            <div flex-gt-xs="25">
+        <div fxLayout="row" fxLayout.xs="column">
+            <div fxLayout="25" fxLayout.xs="100">
                 <md-card>
                     <md-card-title>Battery</md-card-title>
                     <md-divider></md-divider>
                     <mp-battery></mp-battery>
                 </md-card>
             </div>
-            <div flex-gt-xs="25">
+            <div fxLayout="25" fxLayout.xs="100">
                 <md-card>
                     <md-card-title>Signal</md-card-title>
                     <md-divider></md-divider>
                     <mp-signal></mp-signal>
                 </md-card>
             </div>
-            <div flex-gt-xs="50">
+            <div fxLayout="25" fxLayout.xs="100">
                 <md-card>
                     <md-card-title>Weather</md-card-title>
                     <md-divider></md-divider>

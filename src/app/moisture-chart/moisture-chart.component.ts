@@ -19,16 +19,16 @@ export class MoistureChartComponent {
     showXAxis = true;
     showYAxis = true;
     gradient = true;
-    autoScale = true;
-    showLegend = false;
+    autoScale = false;
+    showLegend = true;
     showXAxisLabel = false;
     showYAxisLabel = false;
-    xAxisLabel = 'X Axis';
-    yAxisLabel = 'Y Axis';
+    xAxisLabel = 'Time';
+    yAxisLabel = 'Moisture';
 
     colorScheme: any = {
         domain: [
-            '#01579B', '#0091EA', '#FFB74D', '#E64A19',
+            '#01579B', '#0091EA',
         ],
     };
 
