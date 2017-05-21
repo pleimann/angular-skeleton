@@ -5,6 +5,8 @@ import {
     TdDigitsPipe, IPageChangeEvent
 } from '@covalent/core';
 
+import * as shape from 'd3-shape';
+
 import { moistureData } from './data';
 
 @Component({
@@ -15,16 +17,7 @@ import { moistureData } from './data';
 export class MoistureChartComponent {
     data: any[];
 
-    // Generic Chart options
-    showXAxis = true;
-    showYAxis = true;
-    gradient = true;
-    autoScale = false;
-    showLegend = true;
-    showXAxisLabel = false;
-    showYAxisLabel = false;
-    xAxisLabel = 'Time';
-    yAxisLabel = 'Moisture';
+    interpolationFunction: any = shape.curveBasis;
 
     colorScheme: any = {
         domain: [
@@ -39,5 +32,9 @@ export class MoistureChartComponent {
     // ngx transform using covalent digits pipe
     axisDigits(val: any): any {
         return new TdDigitsPipe().transform(val);
+    }
+
+    dateFormat(val: any): any {
+        return val.toString();
     }
 }
