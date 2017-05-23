@@ -5,6 +5,7 @@ import {
     TdDigitsPipe, IPageChangeEvent
 } from '@covalent/core';
 
+import * as moment from 'moment';
 import * as shape from 'd3-shape';
 
 import { moistureData } from './data';
@@ -17,7 +18,7 @@ import { moistureData } from './data';
 export class MoistureChartComponent {
     data: any[];
 
-    interpolationFunction: any = shape.curveBasis;
+    interpolationFunction: any = shape.curveCardinal;
 
     colorScheme: any = {
         domain: [
@@ -35,6 +36,6 @@ export class MoistureChartComponent {
     }
 
     dateFormat(val: any): any {
-        return val.toString();
+        return moment(val).format('HH:mm:ss.SSS');
     }
 }

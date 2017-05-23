@@ -11,22 +11,22 @@
             </div>
         </md-card>
     </div>
-    <div fxLayout="row" fxLayout.xs="column">
-        <div fxFlex="25" fxFlex.xs="100">
+    <div *ngIf="false" fxLayout="row" fxLayout.xs="column">
+        <div fxFlex="25" fxFlex.xs="100" fxFlexFill>
             <md-card>
                 <md-card-title>Battery</md-card-title>
                 <md-divider></md-divider>
                 <mp-battery></mp-battery>
             </md-card>
         </div>
-        <div fxFlex="25" fxFlex.xs="100">
+        <div fxFlex="25" fxFlex.xs="100" fxFlexFill>
             <md-card>
                 <md-card-title>Signal</md-card-title>
                 <md-divider></md-divider>
                 <mp-signal></mp-signal>
             </md-card>
         </div>
-        <div fxFlex="50" fxFlex.xs="100">
+        <div fxFlex="50" fxFlex.xs="100" fxFlexFill>
             <md-card>
                 <md-card-title>Weather</md-card-title>
                 <md-divider></md-divider>
