@@ -2,7 +2,7 @@ import { Component, AfterViewChecked } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router, RouterLinkActive } from '@angular/router';
 import { MdIconRegistry } from '@angular/material';
-import { TdMediaService } from '@covalent/core';
+import { TdMediaService, TdLayoutNavComponent } from '@covalent/core';
 
 import { Observable } from 'rxjs/Observable';
 

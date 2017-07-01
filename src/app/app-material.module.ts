@@ -18,7 +18,7 @@ import {
     MdSnackBarModule
 } from '@angular/material';
 
-import { CovalentCoreModule } from '@covalent/core';
+import { CovalentLayoutModule, CovalentMediaModule } from '@covalent/core';
 import { CovalentHttpModule } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentMarkdownModule } from '@covalent/markdown';
@@ -31,7 +31,8 @@ import 'hammerjs';
     imports: [
         BrowserAnimationsModule,
         FlexLayoutModule,
-        CovalentCoreModule,
+        CovalentLayoutModule,
+        CovalentMediaModule,
         CovalentHttpModule.forRoot(),
         CovalentHighlightModule,
         CovalentMarkdownModule,
@@ -56,7 +57,8 @@ import 'hammerjs';
     exports: [
         BrowserAnimationsModule,
         FlexLayoutModule,
-        CovalentCoreModule,
+        CovalentLayoutModule,
+        CovalentMediaModule,
         CovalentHttpModule,
         CovalentHighlightModule,
         CovalentMarkdownModule,

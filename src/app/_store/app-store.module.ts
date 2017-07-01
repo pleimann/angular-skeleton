@@ -16,7 +16,7 @@ import { MoistureEffects } from './moisture.effects';
         StoreModule.provideStore({
             moisture: moistureReducer
         }),
-        StoreDevtoolsModule.instrumentStore(AppStoreModule),
+        StoreDevtoolsModule.instrumentOnlyWithExtension(),
         EffectsModule.run(MoistureEffects),
         RouterStoreModule.connectRouter(),
     ],
