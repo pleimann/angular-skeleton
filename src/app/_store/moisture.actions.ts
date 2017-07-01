@@ -1,12 +1,12 @@
 import { Action } from '@ngrx/store';
-import { Enum } from 'typescript-string-enums';
 
 import { MoistureState } from 'app/_model';
 
-export const MoistureActions = Enum(
-    'LOAD_MOISTURE_DATA', 'LOAD_MOISTURE_DATA_SUCCESS', 'LOAD_MOISTURE_DATA_FAILED'
-);
-export type MoistureActions = Enum<typeof MoistureActions>;
+export enum MoistureActions {
+    LOAD_MOISTURE_DATA = 'LOAD_MOISTURE_DATA',
+    LOAD_MOISTURE_DATA_SUCCESS = 'LOAD_MOISTURE_DATA_SUCCESS',
+    LOAD_MOISTURE_DATA_FAILED = 'LOAD_MOISTURE_DATA_FAILED',
+}
 
 /**
  * Load moisture data
